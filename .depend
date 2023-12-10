@@ -1,0 +1,13 @@
+cryptkvs.o: cryptkvs.c error.h ckvs_local.h ckvs_utils.h ckvs_client.h \
+ ckvs_httpd.h
+error.o: error.c
+ckvs_local.o: ckvs_local.c ckvs_io.h ckvs.h ckvs_utils.h error.h \
+ ckvs_crypto.h util.h
+ckvs_utils.o: ckvs_utils.c ckvs.h ckvs_utils.h error.h util.h
+ckvs_io.o: ckvs_io.c ckvs_io.h ckvs.h ckvs_utils.h error.h
+ckvs_crypto.o: ckvs_crypto.c ckvs.h ckvs_utils.h error.h ckvs_crypto.h
+ckvs_client.o: ckvs_client.c ckvs_client.h error.h util.h ckvs_utils.h \
+ ckvs_rpc.h ckvs_crypto.h ckvs_io.h ckvs.h
+ckvs_rpc.o: ckvs_rpc.c ckvs_rpc.h error.h util.h ckvs_utils.h
+ckvs_httpd.o: ckvs_httpd.c ckvs.h ckvs_utils.h error.h ckvs_io.h \
+ ckvs_httpd.h libmongoose/mongoose.h util.h
